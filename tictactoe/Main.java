@@ -12,7 +12,7 @@ public class Main {
     private static String[] getCommand() {
         String[] array;
         while(true) {
-            System.out.print("Commands: start, exit. ");
+            System.out.print("Commands: start, exit.");
             System.out.print("Input command: ");
             array = new Scanner(System.in).nextLine().toLowerCase().split(" ");
             if(array[0].equals("exit"))
