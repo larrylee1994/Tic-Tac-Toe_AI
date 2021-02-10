@@ -1,5 +1,4 @@
 package tictactoe;
-
 import java.util.Scanner;
 
 public class Main {
@@ -13,6 +12,7 @@ public class Main {
     private static String[] getCommand() {
         String[] array;
         while(true) {
+            System.out.print("Commands: start, exit, ");
             System.out.print("Input command: ");
             array = new Scanner(System.in).nextLine().toLowerCase().split(" ");
             if(array[0].equals("exit"))
@@ -27,7 +27,7 @@ public class Main {
     private static boolean startCommand(String[] command) {
         switch (command[0]) {
             case "start":
-                new Game(choosePlayers(command[1]),choosePlayers(command[2])).start();
+                new tictactoe.Game(choosePlayers(command[1]),choosePlayers(command[2])).start();
                 return true;
             case "exit":
             default: return false;
@@ -48,16 +48,16 @@ public class Main {
         }
     }
 
-    private static Player choosePlayers(String args) {
+    private static tictactoe.Player choosePlayers(String args) {
 
         switch(args){
-            case "user": return new User();
-            case "easy": return new EasyAI();
-            case "medium": return new MediumAI();
-            case "hard": return new HardAI();
+            case "user": return new tictactoe.User();
+            case "easy": return new tictactoe.EasyAI();
+            case "medium": return new tictactoe.MediumAI();
+            case "hard": return new tictactoe.HardAI();
             default:
                 System.out.println("something went wrong");
-                return new EasyAI();
+                return new tictactoe.EasyAI();
         }
     }
 }
